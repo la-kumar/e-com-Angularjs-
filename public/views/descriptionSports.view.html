@@ -1,0 +1,95 @@
+<div class='descriptionSection'>
+    <div class='row'>
+        <div class='col-xs-10 col-xs-offset-1 col-xs-offset-2 col-md-4 col-md-offset-1 item-Images'>
+            <div class='row remove-Padding'>
+                <div class='col-xs-4 col-sm-4'>
+                    <ul style="list-style: none;">
+                        <li ng-click='changeMainImage(0)' class='sideIcon'> <img src='{{item.image[0]}}' width='40%' height='10%' class='img-responsive'> </li>
+                        <li ng-click='changeMainImage(1)' class='sideIcon' align='center'> <img src='{{item.image[1]}}' width='40%' height='10%' class='img-responsive'> </li>
+                        <li ng-click='changeMainImage(2)' class='sideIcon' align='center'> <img src='{{item.image[2]}}' width='40%' height='10%' class='img-responsive'> </li>
+                    </ul>
+                </div>
+                <div class='col-xs-7 col-xs-offset-1 col-sm-7 col-sm-offset-1' align='center' class='mainImage1'>
+                    <img ng-src='{{main}}' class='img-responsive' ng-model='mainImage' width='75%' height=''>
+                </div>
+            </div>
+        </div>
+        <div class='col-xs-10 col-xs-offset-1 col-md-5 col-md-offset-1 description-Div'>
+            <div class='row'>
+                <div class='col-xs-7 col-sm-8'>
+                    <h2>  {{item.name}} </h2>
+                </div>
+                <div class='col-xs-4 col-sm-4'>
+                    <input type='button' class='btn btn-primary addToCartButton' value='ADD TO CART' ng-click='addToCart()'>
+                </div>
+            </div>
+            <h3>  &#8377 {{item.price}} </h3>
+            <div class="row remove-Padding ">
+                <div class='col-sm-12 panel-group '>
+                    <ul class="list-unstyled big-Line">
+                        <li class='text-truncate'><i class="glyphicon glyphicon-tag text-success"></i>
+                        <em> Special Price</em> Get extra ₹300 off (price inclusive of discount)T&C</li>
+                        <li class='text-truncate'><i class="glyphicon glyphicon-piggy-bank text-success"></i><em> Bank Offer</em> Extra 5% off* with Axis Bank Buzz Credit CardT&C</li>
+                        <li class='text-truncate'><i class="glyphicon glyphicon-tag text-success"></i><em> Partner Offer</em> First Purchase on mobiles, Get Extra 10% off on your next purchase on select fashion products</li>
+                    </ul>
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">   <a data-parent="#accordion" >Key Features</a></h4>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-body">
+                                    <div class='list-Group'>
+                                        <div class='list-Group-Item'>
+                                            <small>Brand</small> - {{item.brand}}
+                                        </div>
+                                        <div class='list-Group-Item'>
+                                            <small>Game</small> - {{item.sport}}
+                                        </div>
+                                        <div class='list-Group-Item'>
+                                            <small>Seller</small> - Gemini Solutions,Gurgaon
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Highlights</a>   </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class='list-Group'>
+                                        <div class='list-Group-Item'> <i>Color</i> - {{item.features.color}}</div>
+                                        <div class='list-Group-Item'> <i>Material</i> {{item.features.material}}</div>
+                                        <div class='list-Group-Item'><i>Weight</i> - {{item.features.weight}} g </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Reviews</a>    </h4>
+                                </div>
+                                <div id="collapse3" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="panel panel-default" ng-repeat='review in item.reviews'>
+                                            <div class="panel-heading">
+                                                <h6 class="panel-title" align='left'>{{review.title}} </h6>
+                                            </div>
+                                            <div class="panel">
+                                                <div class="panel-body">{{review.comment}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </div>
+</div> -->

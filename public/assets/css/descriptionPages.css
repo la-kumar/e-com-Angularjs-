@@ -1,0 +1,72 @@
+.descriptionSection{
+	margin-top: 1% ;
+}
+
+.sideIcon{
+	padding: 2% 5% 2% 5% ;
+	margin-top: 5%;
+	border-style: solid;
+	border-color: #f7f9fc ;
+	border-width: 2px ;
+}
+
+.sideIcon img{
+	margin-left:25%;
+	height: 7%;
+	width:50%;
+}
+
+.electronics-Main-Image{
+	width:75%;
+}
+
+.mainImage1{
+  padding: 5px 5px 5px 10px ;
+}
+
+
+.item-Images{
+	position: sticky !important;
+	padding: 2% 2% 3% 2% ;
+	top:15%;
+	margin-top: 1%;
+    margin-left: 1% ;
+    border-style: solid;
+	border-color: #f7f9fc ;
+	border-width: 2px ;
+}
+
+.addToCartButton{
+	margin-top : 10%  ;
+	border-radius: 15px ;
+}
+
+/*.description-Div{
+	max-height: 100%;
+	overflow-y: auto ;
+}*/
+
+.details-Items{
+	margin: 5% 1% 1% 1% !important ;
+}
+
+.big-Line{
+	line-height: 160%;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 700px) {
+.item-Images{
+        position: relative !important;
+    }
+    .electronics-Main-Image{
+    	height: 30% !important;
+    	width: 45%
+    }
+
+   .sideIcon img{
+	margin-left:25%;
+	height: 5%;
+	width: 30%;
+}
+
+}

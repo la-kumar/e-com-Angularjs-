@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+    font-size: 1em;
+    color : ;
+    background-color: #eee: 
+}
+
+.capitalize {
+   text-transform: capitalize;
+}
+
+html{
+    height: 100% ;
+}
+
+body{
+    position: relative;
+    margin: 0 ;
+    padding-bottom: 12em ;
+}
+
+.index-Nav{
+    z-index: 999;
+    background-color: #f7f9fc ; 
+}
+
+.cartNav{
+    font-size: 1.5em !important;
+}
+.hide-Element {
+    display: none;.
+}
+
+.wrapper {
+    height: 100%;
+
+}
+
+.headings {
+    font-size: 1.5em;
+}
+
+.navbar__header {
+    display: inline;
+}
+
+.remove-Padding {
+    padding: 0 0 0 0;
+}
+
+.logo-Image {
+    padding: 0 0 0 0;
+    border-style: none;
+}
+
+.view-Section {
+  /*  margin-top: 4%;
+  */  background-color: #fff ;
+/*    min-height: 75%;*/
+/*margin: 0 auto ;*/
+padding-top: 4em ;
+padding-bottom: 2%;
+}
+
+.footer-Style .headings{
+    font-size: 1.3em;
+    padding-bottom: 2%;
+}
+
+.footer-Style {
+    padding: 2% 1% 2% 1%;
+    background-color: #f7f9fc;
+    color: #000;
+    font-size :1.2em;
+    border-radius: 5px;
+    width: 100%;
+    position: absolute;
+    right: 0 ;
+    bottom: 0 ;
+    left: 0 ;
+     overflow-x: hidden;
+}
+
+.footer-List {
+   list-style-type: none;
+    padding-left: 28% !important;
+    text-align: left;
+    line-height: 140%;
+}
+
+.footer-List a {
+    color: #000;
+}
+
+.footer-List a:hover {
+    color: #ccc;
+}
+
+.footer-Row {
+    margin: 0 0 0 0;
+}
+
+
+.item-Cards {
+    min-height: 54%;
+    max-height: 80%; 
+    box-shadow: 1px #f5e9e9;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    padding-top: 2% ;
+    padding-bottom: 2%;
+    font-size: 1em ;
+    line-height: 20px;
+}
+
+.item-Cards:hover{
+/*    -webkit-box-shadow: 17px 27px 53px -28px rgba(0,0,0,0.75);
+-moz-box-shadow: 17px 27px 53px -28px rgba(0,0,0,0.75);
+*/box-shadow: 17px 27px 53px -28px rgba(0,0,0,0.75);
+}
+
+.item-Cards-Small{
+   min-height: 54%;
+    max-height: 80%; 
+    box-shadow: 1px #f5e9e9;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    padding-top: 2% ;
+    padding-bottom: 2%;
+    font-size: 1em ;
+    line-height: 20px;
+}
+
+.item-Cards-Small:hover{
+ box-shadow: 17px 27px 53px -28px rgba(0,0,0,0.75);   
+}
+
+.topNav-Small{
+ display: none;        
+}
+
+@media only screen and (max-width: 750px) {
+    
+    .headings {
+        font-size: 1.2em;
+    }
+    .view-Section {
+        margin-top: 15%;
+    }
+}
+

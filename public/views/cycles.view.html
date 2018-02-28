@@ -1,0 +1,115 @@
+<div  ng-controller='cyclesCtrl'>
+    <div id="mySidenav" class="sidenav">
+   <!--      <div class="panel panel-default">
+      <div class="panel-heading">
+          <a data-toggle="collapse" href="#collapse1">Category</a>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <ul class="list-group">
+    
+        <a ui-sref="cyclesState" class="list-group-item">Cycles</a>
+      
+        </ul>
+       
+      </div>
+    </div> -->
+            
+    <h4 data-toggle="collapse" href="#collapse1">CATEGORY</h4>
+      <div id="collapse1" class="collapse">
+        <ul class='list-unstyled' style='margin-left: 5%;'>
+          <li > <label ui-sref='electronicsState' >Electronics</label></li>
+          <li >  <label ui-sref="fashionState" >Fashion</label></li>
+          <li >  <label ui-sref="sportsState" >Sports</label></li>
+        </ul>
+        </div>
+
+        <h4 data-toggle="collapse" href="#collapse2">FILTERS</h4>
+        <div id="collapse2" class="collapse">
+        <b>BRAND</b>  <i  class='glyphicon glyphicon-chevron-up' data-toggle="collapse" data-target="#demo"></i>
+     <ul id="demo" class="collapse in" style="list-style-type: none;">
+        <li ng-repeat='brand in brands'>
+        <input type='checkbox' ng-model="brandArray[$index]" ng-true-value="'{{brand}}'" ><label class='capitalize'>{{brand}}</label>
+        </li>
+      </ul> 
+      <b>PRICE</b>
+       <p> {{priceSlider.value}}</p>
+        <rzslider  style="width: 70%;margin-left: 5%;" rz-slider-model="priceSlider.minValue" rz-slider-high="priceSlider.maxValue" rz-slider-options="priceSlider.options"></rzslider>
+      </div>
+      </div>
+
+
+
+     <div class='row topNav-Small remove-Padding'>
+     <div class='col-xs-12'>
+     <div class='row remove-Padding fixed-Top'>
+            <div class='col-xs-4'>
+        <a ui-sref="electronicsState">Electronics</a>
+       </div>
+       <div class='col-xs-4'>
+        <a ui-sref="fashionState">Fashion</a>
+       </div>
+       <div class='col-xs-4'>
+        <a ui-sref="sportsState">Sports</a>
+       </div>
+     </div>
+     <hr class='remove-Padding'/>
+     <div class='row '>
+        <div class='col-xs-6' ng-repeat='brand in brands'>
+        <input type='checkbox' ng-model="brandArray[$index]" ng-true-value="'{{brand}}'" > 
+        <label class='capitalize'>{{brand}}</label>
+        </div>
+     </div>
+      <div class='row '>
+       <div class='col-xs-10 '>
+             <p> {{priceSlider.value}}</p>
+        <rzslider  style="width: 110%;margin-left: 5%;" rz-slider-model="priceSlider.minValue" rz-slider-high="priceSlider.maxValue" rz-slider-options="priceSlider.options"></rzslider>
+       </div>
+     </div>
+     </div>
+     </div>
+
+
+     
+ 
+    <div class="main" style="margin-top: 2%">
+     <div class='headings'>
+    <div ng-model='head'  ng-show='(allCycles | customFilterCycle : brandArray | filter : priceRange ).length'>Showing {{(allCycles | customFilterCycle: brandArray | filter : priceRange ).length}} Products out of {{allCycles.length}} Products
+    </div> 
+    <div  align='center'  ng-model='noData' ng-show='!(allCycles | customFilterCycle : brandArray | filter : priceRange ).length'>
+    <div class='row'>
+    <div class='col-sm-4 col-sm-offset-2'>
+    <img src='assets/images/noDataFound.png'>
+    </div>
+    <div class='col-sm-4 col-sm-offset-1 '  style='margin-top: 15%'>
+  <h4>    Sorry , Product similar to your search will be tried to made available soon.</h4>
+    </div>
+    </div>
+    </div>
+    </div>
+        <section class='flex grid'>
+            <div class='row'>
+                <div ng-repeat='items in allCycles | customFilterCycle: brandArray | filter : priceRange ' class='col-xs-10 col-xs-offset-1 col-sm-10 item-Cards-Cycles item-Cards'  >
+                    <div class='row remove-Padding'>
+                        <div class='col-xs-4'>
+                            <img src='{{items.image[0]}}' height='40%' width='90%'>
+                        </div>
+                        <div class='col-xs-6 col-xs-offset-2 intro-Cycle'>
+                            <span><b> {{items.name}}</b> </span><br/>
+                            <ul>
+                            <li><b>&#8377 {{items.price}}</b></li>
+                            <li> {{items.features.riderHeight}} </li>
+                            <li> {{items.features.idealFor}} </li>
+                            <li> {{items.features.gear}} </li>
+                            </ul>
+                             <div class='row remove-Padding'>
+                            <div class='col-xs-6 buttons'>
+                            <input type='button' class="btn btn-primary" value='Details' ng-click='viewDetails(items.uid)'>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

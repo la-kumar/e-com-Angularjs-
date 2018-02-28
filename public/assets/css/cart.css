@@ -1,0 +1,96 @@
+.cart-First img{
+	height: 20%;
+	width: 40%;
+}
+
+
+.item-List input{
+	text-align: right;
+}
+
+
+.count-Button{
+	border-radius: 50% ;
+}
+
+.input-Count{
+	width:40px;
+}
+
+.sticky-Div{
+	position: sticky !important;
+	top:12.6%;
+}
+.cart-Second{
+	margin-top: 5%;
+}
+.cart-Third{
+	margin-top: 5%;
+}
+.cart-fourth{
+	margin-top: 5%;
+}
+
+.CART{
+	width: 100%;
+}
+
+
+@media only screen and (min-width: 200px) and (max-width: 500px){
+             .item-Cards-Cycles{
+            max-height:50% !important ;
+            font-size: 0.7em !important;
+            line-height: 10px !important;
+         }
+         .item-Cards-Small{
+         	font-size: 0.6em !important;
+         	line-height: 10px !important;
+         }
+         .item-Cards-Small img{
+         	height: 65% !important;
+         }
+         .item-Cards{
+         	font-size: 0.7em !important;
+         	line-height: 10px !important;
+         }
+         .TOTAL{
+         	margin-bottom: 5% !important;
+         }
+         .heading-HomePage{
+         	font-size: 1.3em !important;
+         }
+         .heading-HomePage input{
+         	font-size: 10px !important;
+         }
+         .cart-Third{
+         	padding-left: 0 !important;
+         	padding-right: 0 !important;
+         }
+         .price{
+         	font-size: 15px !important;
+         }
+         .cart-Second input{
+         	width:30% !important;
+         }
+         .TOTAL{
+         	font-size: 0.9em !important;
+         }
+         .small-Font h4{
+         	font-size: 12px !important;
+         }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1395px) {
+    .CART {
+        width: 65% !important;
+        margin: 0 !important;
+    }
+    .TOTAL {
+        width: 35% !important;
+        margin: 0 !important;
+    }
+    .ALLCART {
+        display: inline-block !important;
+        width: 100% !important;
+    }
+}

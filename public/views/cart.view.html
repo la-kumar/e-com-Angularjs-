@@ -1,0 +1,90 @@
+<div ng-init='loadCart()'>
+    <div class='row ALLCART'>
+        <div class=' col-xs-12 CART'>
+            <div class="item-List">
+                <div class="headings ">My Cart({{displayData.length}})</div>
+                <div class="list-group">
+                 <div class='list-group-item' ng-model='emptyCart' ng-show='!displayData.length'>
+                   <div class='row'>
+                   <div class='col-xs-8 col-xs-offset-2 col-md-5 col-md-offset-3'>
+                      <img src='assets/images/emptyCart.png' height='35%' width='90%'>
+                   </div>
+                   <div class='col-xs-6 col-xs-offset-4 col-md-4' style='margin-top: 8%' ><h3>EMPTY CART</h3>
+                        <div class='btn btn-info' ng-click='goToHome()'>Continue Shopping</div>
+                   </div>
+                   </div>
+                 </div>
+                    <div class="panel panel-default list-group-item remove-Padding" ng-repeat='data in displayData'>
+                        <div class="panel-heading">
+                            <h2 class="panel-title"><b>{{data.name}}</b>
+                    <span class='pull-right' ng-click='removeItem(data.uid)'><i class="fa fa-times"></i></span></h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class='row'>
+                                <div class='col-xs-3 col-md-2 cart-First'>
+                                    <img src='{{data.image[0]}}' >
+                                </div>
+                                <div class=' col-xs-3 col-md-3 cart-Second'>
+                                    <!-- <div ng-if="selected[data.uid].count"> -->
+                                    <span class="glyphicon glyphicon-minus-sign" ng-click='decreaseCount(data.uid)'></span>
+                                    <!-- </div> -->
+                                    <input type="number" name="" min=1 max=5 ng-model='selected[data.uid].count' value='{{selected[data.uid].count}}' ng-blur='updateQuantity(data.uid)'>
+                                    <span class="glyphicon glyphicon-plus-sign" ng-click='increaseCount(data.uid)'></span>
+                                </div>
+                                <div class='col-xs-2 col-md-2 cart-Third'>
+                                    <h4 class='price'>  &#8377  {{data.price}}  </h4>
+                                </div>
+                                <div class='col-xs-4 col-md-4 cart-Fourth'>
+                                      <i class='text-success'>Free</i> delivery in 4-5 days<br/>
+                                      <small style="color:#696b79">10 Days Replacement Policy</small>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='col-xs-6 col-xs-offset-3 TOTAL sticky-Div' ng-show='displayData.length' ng-model='price'>
+            <div class="panel panel-default">
+                <div class="panel-heading">PRICE DETAILS</div>
+                <div class="panel-body list-group">
+                    <div class='row'>
+                        <b class='col-xs-7 '> Price({{displayData.length}} items)   </b>
+                        <div class='col-xs-5'>
+                            &#8377 {{amount}}
+                        </div>
+                    </div>
+                    <br/>
+                    <div class='row'>
+                        <b class='col-xs-7 '> Delivery Charges   </b>
+                        <div class='col-xs-5 '>
+                            <i class='text-success'>FREE</i>
+                        </div>
+                    </div>
+                </div>
+                <div class='panel-footer'>
+                    <div class='row remove-Padding small-Font'>
+                        <div class='col-xs-7 '>
+                            <h4> Amount Payable  </h4>
+                        </div>
+                        <div class='col-xs-5 '>
+                            <h4> &#8377 {{amount}} </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row'>
+               <div class='col-xs-5  col-sm-5 col-sm-offset-1'>
+                   <div class='btn btn-info' ng-click='goToHome()'>
+                     Shop More
+                   </div>
+               </div>
+               <div class='col-xs-5 col-xs-offset-1 col-sm-5 col-sm-offset-1'>
+                   <div class='btn btn-warning' ng-click='emptyCart()'>Checkout</div>
+               </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>

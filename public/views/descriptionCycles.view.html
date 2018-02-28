@@ -1,0 +1,114 @@
+<div  class='descriptionSection' >
+    <div class='row '>
+        <div class='col-xs-10 col-xs-offset-1  col-md-5 item-Images'>
+            <div class='row remove-Padding'>
+               
+                <div class='col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1' align='center' class='mainImage1'>
+                    <img ng-src='{{main}}' class='img-responsive' ng-model='mainImage' width='75%' height='50%'>
+                </div>
+                 <div class='col-xs-12' height='100%'>
+                 <div class='col-xs-4 sideIcon' ng-click='changeMainImage(0)' align="center">
+                         <img src='{{item.image[0]}}' width='40%' height='10%' class='img-responsive'> </div>
+                         <div ng-click='changeMainImage(1)' class='sideIcon col-xs-4' align='center'>
+                          <img src='{{item.image[1]}}' width='40%' height='10%' class='img-responsive'> 
+                         </div>
+                        <div ng-click='changeMainImage(2)' class='col-xs-4 sideIcon' align='center' style='margin-bottom: 20px;'> 
+                        <img src='{{item.image[2]}}' width='40%' height='10%' class='img-responsive'> 
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class='col-xs-10 col-xs-offset-1 col-md-5 col-md-offset-1 description-Div'>
+        <div class='row'>
+        <div class='col-sm-8'>
+            <h2>  {{item.name}} </h2>
+            </div>
+            <div class='col-sm-4'>
+                    <input type='button' class='btn btn-primary addToCartButton' value='ADD TO CART' ng-click='addToCart()'>
+            </div>
+            </div>
+            <!-- <hr/><h2> ({{item.features.ram}}, {{item.features.color}})</h2> -->
+            <h3>  &#8377 {{item.price}} </h3>
+            <div class="row remove-Padding">
+                <div class='col-sm-12 panel-group '>
+                <ul class="list-unstyled big-Line">
+                <li class='text-truncate'><i class="glyphicon glyphicon-tag text-success"></i><em> Special Price</em> Get extra ₹300 off (price inclusive of discount)T&C</li>
+                <li class='text-truncate'><i class="glyphicon glyphicon-piggy-bank text-success"></i> 
+                <em> Bank Offer</em> Extra 5% off* with Axis Bank Buzz Credit CardT&C</li>
+                <li class='text-truncate'><i class="glyphicon glyphicon-tag text-success"></i><em>
+                 Partner Offer</em> First Purchase on mobiles, Get Extra 10% off on your next purchase on select fashion products</li>
+            </ul>
+ 
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            Keys
+         </h4>
+      </div>
+      <div class="panel-collapse ">
+        <div class="panel-body">
+        <div class='list group'>
+          <div class='list-group-item'>
+             <small>Brand</small> - {{item.brand}}
+          </div>
+          <div class='list-group-item'>
+             <small>Seller</small> - Gemini Solutions,gurgaon 
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Highlights</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+        <div class='list-group'>
+                            <div class='list-group-item'><i>RiderHeight</i> - {{item.features.riderHeight}} </div>
+                            <div class='list-group-item'><i>Ideal For</i> -{{item.features.idealFor}} 
+                            </div>
+                            <div class='list-group-item'><i>Frame Material</i> - {{item.features.frameMaterial}} </div>
+                            <div class='list-group-item'><i>Brake Type</i> - {{item.features.brakeType}} </div>
+                            <div class='list-group-item'><i>Gear</i> - {{item.features.gear}} </div>
+                            <div class='list-group-item'><i>Tire Size</i> - {{item.features.tireSize}} in</div>
+                            <div class='list-group-item'><i>Frame Size</i> - {{item.features.frameSize}} in.</div>
+                        </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Reviews</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+         <div class="panel panel-default" ng-repeat='review in item.reviews'>
+                        <div class="panel-heading">
+                            <h6 class="panel-title" align='left'>
+                     <i>{{review.title}}</i>
+                    </h6>
+                        </div>
+                        <div  class="panel">
+                            <div class="panel-body">{{review.comment}}</div>
+                        </div>
+                    </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+                            
+               </div>
+            </div>
+        </div>
+    </div>
+
+      
+              
+           
+</div>

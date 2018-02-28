@@ -1,0 +1,139 @@
+<div class='text-center admin-Section' ng-init='adminInit()'>
+    <form class='admin-Form'>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select ng-model="selectCategory" ng-options="type for type in category" ng-change='formDisplay()'>
+            </select>
+        </div>
+    </form>
+    <form name = 'mobileForm' ng-hide='mobile'>
+        <div class='headings'>MOBILE</div>
+        <div class="form-group mobile-Form">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" placeholder="Name of Item" ng-model='formData.name' name='name' required>
+            <label for="brand">Brand:</label>
+            <input type="text" class="form-control" placeholder="brand of Item" ng-model='formData.brand' name='brand' required>
+            <label for="price">Price:</label>
+            <input type="number" class="form-control" placeholder=0 ng-model='formData.price' name='price' required >
+            <label for="Screen">Screen-Size:</label>
+            <input type="number" class="form-control" placeholder=0 ng-model='formData.screen' name='screen' required>
+            <label for="processor">Processor:</label>
+            <input type="text" class="form-control" placeholder="" ng-model='formData.processor' name='processor' required>
+            <label for="os">Operating System:</label>
+            <input type="text" class="form-control" placeholder="android,winndows..." ng-model='formData.os' name='os' required>
+            <label for="battery">Battery:</label>
+            <input type="text" class="form-control" placeholder="5000 mah" ng-model='formData.battery' name='battery' required>
+            <label for="camera">Camera:</label>
+            <input type="text" class="form-control" placeholder="12 mega-pixel" ng-model='formData.camera' name='camera' required>
+            <label for="ram">RAM:</label>
+            <input type="text" class="form-control" placeholder="4gb" ng-model='formData.ram' name='ram' required>
+            <label for="ROM">ROM:</label>
+            <input type="text" class="form-control" placeholder="64gb" ng-model='formData.rom' name='rom' required>
+            <label for="warrenty">Warrenty:</label>
+            <input type="text" class="form-control" placeholder="2 year" ng-model='formData.warrenty' name='warrenty' required>
+            <label for="color">Color:</label>
+            <input type="text" class="form-control" placeholder="black" ng-model='formData.color' name='color' required>
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" placeholder="" ng-model='formData.desc' name='desc' required>
+            <label for="image">Image:</label>
+            <input type="file" class="form-control" ng-model='formData.image'>
+            <button type="button" class="btn btn-default" ng-click='addMobile()' ng-disabled='mobileForm.$invalid'>Submit</button>
+        </div>
+    </form>
+    <form name = 'laptopForm' ng-hide='laptop'>
+        <div class='headings'>LAPTOP</div>
+        <div class="form-group laptop-Form">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" placeholder="Name of Item" ng-model='formData.name'>
+            <label for="brand">Brand:</label>
+            <input type="text" class="form-control" placeholder="brand of Item" ng-model='formData.brand'>
+            <label for="price">Price:</label>
+            <input type="number" class="form-control" placeholder=0 ng-model='formData.price'>
+            <label for="Screen">Screen-Size:</label>
+            <input type="number" class="form-control" placeholder=0 ng-model='formData.screen'>
+            <label for="processor">Processor:</label>
+            <input type="text" class="form-control" placeholder="" ng-model='formData.processor'>
+            <label for="os">Operating System:</label>
+            <input type="text" class="form-control" placeholder="android,winndows..." ng-model='formData.os'>
+            <label for="ram">RAM:</label>
+            <input type="text" class="form-control" placeholder="4gb" ng-model='formData.ram'>
+            <label for="ROM">ROM:</label>
+            <input type="text" class="form-control" placeholder="64gb" ng-model='formData.rom'>
+            <label for="warrenty">Warrenty:</label>
+            <input type="text" class="form-control" placeholder="2 year" ng-model='formData.warrenty'>
+            <label for="color">Color:</label>
+            <input type="text" class="form-control" placeholder="black" ng-model='formData.color'>
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" placeholder="" ng-model='formData.desc'>
+            <label for="image">Image:</label>
+            <input type="file" class="form-control" ng-model='formData.image'>
+            <button type="button" class="btn btn-default" ng-click='addLaptop()' ng-disabled='!(laptopForm.$valid)'>Submit</button>
+        </div>
+    </form>
+    <form name = 'tvForm' ng-hide='tv'>
+        <div class='headings'>TV</div>
+        <div class="form-group tv-Form">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" placeholder="Name of Item" ng-model='formData.name'>
+            <label for="brand">Brand:</label>
+            <input type="text" class="form-control" placeholder="brand of Item" ng-model='formData.brand'>
+            <label for="price">Price:</label>
+            <input type="number" class="form-control" placeholder=0 ng-model='formData.price'>
+            <label for="Screen">Screen-Size:</label>
+            <input type="number" class="form-control" placeholder=0 ng-model='formData.screen'>
+            <label for="os">Operating System:</label>
+            <input type="text" class="form-control" placeholder="android,winndows..." ng-model='formData.os'>
+            <label for="warrenty">Warrenty:</label>
+            <input type="text" class="form-control" placeholder="2 year" ng-model='formData.warrenty'>
+            <label for="color">Color:</label>
+            <input type="text" class="form-control" placeholder="black" ng-model='formData.color'>
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" placeholder="" ng-model='formData.desc'>
+            <label for="image">Image:</label>
+            <input type="file" class="form-control" ng-model='formData.image'>
+            <button type="button" class="btn btn-default" ng-click='addTv()' ng-disabled='!(tvForm.$valid)'>Submit</button>
+        </div>
+    </form>
+    <form name = 'speakerForm' ng-hide='speaker'>
+        <div class='headings'>SPEAKER</div>
+        <div class="form-group laptop-Form">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" placeholder="Name of Item" ng-model='formData.name'>
+            <label for="brand">Brand:</label>
+            <input type="text" class="form-control" placeholder="brand of Item" ng-model='formData.brand'>
+            <label for="price">Price:</label>
+            <input type="number" class="form-control" placeholder=0 ng-model='formData.price'>
+            <label for="warrenty">Warrenty:</label>
+            <input type="text" class="form-control" placeholder="2 year" ng-model='formData.warrenty'>
+            <label for="color">Color:</label>
+            <input type="text" class="form-control" placeholder="black" ng-model='formData.color'>
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" placeholder="" ng-model='formData.decs'>
+            <label for="image">Image:</label>
+            <input type="file" class="form-control" ng-model='formData.image'>
+            <button type="button" class="btn btn-default" ng-click='addSpeaker()' ng-disabled='!(speakerForm.$valid)'>Submit</button>
+        </div>
+    </form>
+    <form name = 'headphoneForm' ng-hide='headphone' >
+        <div class='headings'>Headphones</div>
+        <div class="form-group laptop-Form">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" placeholder="Name of Item" ng-model='formData.name'>
+            <label for="brand">Brand:</label>
+            <input type="text" class="form-control" placeholder="brand of Item" ng-model='formData.brand'>
+            <label for="price">Price:</label>
+            <input type="number" class="form-control" placeholder=0 ng-model='formData.price'>
+            <label for="cableLength">Cable Length:</label>
+            <input type="number" class="form-control" placeholder=0 ng-model='formData.cableLength'>
+            <label for="warrenty">Warrenty:</label>
+            <input type="text" class="form-control" placeholder="2 year" ng-model='formData.warrenty'>
+            <label for="color">Color:</label>
+            <input type="text" class="form-control" placeholder="black" ng-model='formData.color'>
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" placeholder="" ng-model='formData.desc'>
+            <label for="image">Image:</label>
+            <input type="file" class="form-control" ng-model='formData.image'>
+            <button type="button" class="btn btn-default" ng-click='addHeadphone()' ng-disabled='(headphoneForm.$invalid)'>Submit</button>
+        </div>
+    </form>
+</div>
